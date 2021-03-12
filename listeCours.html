@@ -1,0 +1,33 @@
+<HTML>
+
+ <?php//Connection avec la BDD.
+        mysql_connect("localhost", "root", "");
+        mysql_select_db("double");
+         
+        $reponce = mysql_query("SELECT * FORM cours");
+        ?>
+         
+        <table>
+                <tr>
+                    <th>id</th>
+                    <th>cours</th>
+                    
+                </tr>
+            <?php//On affiche les lignes du tableau une à une à l'aide d'une boucle
+            while($donnees = mysql_fetch_array($reponse))
+            {
+            ?>
+                <tr>
+                    <th><?php echo $donnees['id'];?></th>
+                    <th><?php echo $donnees['cours'];?></th>
+
+                </tr>
+            <?php
+            } //fin de la boucle, le tableau contient toute la BDD
+            mysql_close(); //deconnection de mysql
+            ?>
+        <table>
+
+<p id="heading"><a href="pageAccueil.html">retour</a></p>
+
+</HTML>
