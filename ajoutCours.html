@@ -1,17 +1,24 @@
-<HTML>
-
+﻿<HTML>
+<link href="cssAjoutCours.css" rel="stylesheet">
+<script type="text/javascript" src="infobulle.js"></script>
 <form >
     <div>
-        <label for="name">intitule:</label>
-        <input type="text" id="name" name="user_name">
+        <label >intitule:</label>
+        <input type="text" id="intitule" name="intitule">
     </div>
     <div>
-        <label for="mail">niveau:</label>
-        <input type="email" id="mail" name="user_mail">
+        <label >niveau:</label>
+        <input type="text" id="niveau" name="niveau">
     </div>
     <div>
-        <label for="msg">liste des couples :</label>
-        <textarea id="msg" name="user_message"></textarea>
+        <label >liste des couples :</label>
+        <textarea type="text" id="texte" name="texte"></textarea>
+        <img src="images/infobull.png" alt="infobulle" onmouseover="javascript: afficher_aide(document.getElementById('aide_salaire'));" onmouseout="javascript: afficher_aide(document.getElementById('aide_salaire'));"/>
+        <div class="infobulle">
+            <div class="infobulle-texte" id="aide_salaire" style="display: none;">
+                séparer chaque couple par un point virgule
+            </div>
+        </div>
     </div> 
 	<div class="button">
         <button type="submit">Envoyer le message</button>
@@ -21,3 +28,4 @@
 <p id="heading"><a href="pageAccueil.html">retour</a></p>
 
 </HTML>
+
