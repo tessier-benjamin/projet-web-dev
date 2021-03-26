@@ -25,6 +25,7 @@ function AfficherCours($connexion){
                     <th>intitule</th>
 					<th>niveau</th>
 					<th>couple</th>
+                    <th>Lien du cour</th>
                     
                 </tr>
 				<?php
@@ -48,14 +49,17 @@ function AfficherCours($connexion){
 			<td>
 			<?php			
 			echo $donnees['couple'];
-?>
+            ?>
 			</td>
-			<td>
-	</tr><table>
-<?php
+                <td>
+                    <a href="liste.php?id=<?php echo $donnees['id'];?>">Lien du cours</a>
+                </td>
+			
+	</tr><?php
 
-		}
-		$requete->closeCursor(); 
+		}?></table><?php
+
+		$requete->closeCursor();
 	}
 
 function AddCouple($intitule,$niveau,$couple,$connexion){
@@ -64,9 +68,15 @@ function AddCouple($intitule,$niveau,$couple,$connexion){
 
 
 }
+function GetQuizz($connexion,$id){
+    $requete = $connexion->prepare("Select * from cours where id = '$id'");
+	$requete->execute(array()) ;
+	$resultat = $requete->fetchAll();
+	return $resultat;
+
+}
+
 function ExportAllCouple($connexion){
-	if(isset($_POST["Export"])){
-		
-	}  
+    
 }
 
