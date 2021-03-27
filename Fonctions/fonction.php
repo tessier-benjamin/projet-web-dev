@@ -26,6 +26,8 @@ function AfficherCours($connexion){
 					<th>niveau</th>
 					<th>couple</th>
                     <th>Lien du cour</th>
+					<th>Supprimer</th>
+					<th>Modifier</th>
                     
                 </tr>
 				<?php
@@ -54,7 +56,12 @@ function AfficherCours($connexion){
                 <td>
                     <a href="liste.php?id=<?php echo $donnees['id'];?>">Lien du cours</a>
                 </td>
-			
+				<td>
+                    <a href="delete.php?id=<?php echo $donnees['id'];?>">Supprimer cours</a>
+                </td>
+				<td>
+                    <a href="modification.php?id=<?php echo $donnees['id'];?>">Modifier cours</a>
+                </td>
 	</tr><?php
 
 		}?></table><?php
@@ -65,8 +72,6 @@ function AfficherCours($connexion){
 function AddCouple($intitule,$niveau,$couple,$connexion){
 	$requete = $connexion->prepare("Insert into cours (intitule,niveau,couple) Values ('$intitule','$niveau','$couple') ");
 	$requete->execute(array()) ;
-
-
 }
 function GetQuizz($connexion,$id){
     $requete = $connexion->prepare("Select * from cours where id = '$id'");
@@ -79,4 +84,24 @@ function GetQuizz($connexion,$id){
 function ExportAllCouple($connexion){
     
 }
+function delete($connexion,$id){
+	$requete = $connexion->prepare("delete from cours where id = '$id'");
+	$requete->execute(array()) ;
+}
+function GetAllCours($connexion){
+	$requete = $connexion->prepare("Select * from cours'");
+	$requete->execute(array()) ;
+		$resultat = $requete->fetchAll();
+	return $resultat;
+}
+function GetCours($connexion,$id){
+	$requete = $connexion->prepare("Select * from cours where id = '$id'");
+	$requete->execute(array()) ;
+	$resultat = $requete->fetchAll();
+	return $resultat;
+}
 
+function update($id,$intitule,$niveau,$couple,$connexion){
+	$requete = $connexion->prepare("update cours set intitule = '$intitule' ,niveau='$niveau',couple='$couple' where id = '$id' ");
+	$requete->execute(array()) ;
+}
