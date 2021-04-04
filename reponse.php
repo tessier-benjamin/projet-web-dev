@@ -4,7 +4,6 @@ require_once("header.php");
 $connexion = connexionMysqlBdd("localhost","double", "root", "");
 $données = GetQuizz($connexion,$_POST['id']);
 $Questions = explode(";",$données['0']['couple']);
-var_dump($_POST);
 ?>
 
 <table>

@@ -24,7 +24,11 @@ function AfficherCours($connexion){
                     <th>id</th>
                     <th>intitule</th>
 					<th>niveau</th>
+					<?php
+					if ($_COOKIE['perm'] == 'Admin' or $_COOKIE['perm'] == 'Enseignant') {
+					?>	
 					<th>couple</th>
+					<?php } ?>
                     <th>Lien du cour</th>
 					<?php
 					if ($_COOKIE['perm'] == 'Admin' or $_COOKIE['perm'] == 'Enseignant') {
@@ -51,11 +55,15 @@ function AfficherCours($connexion){
 			echo $donnees['niveau'];
 ?>
 			</td>
+			<?php
+					if ($_COOKIE['perm'] == 'Admin' or $_COOKIE['perm'] == 'Enseignant') {
+					?>	
 			<td>
+			
 			<?php			
 			echo $donnees['couple'];
             ?>
-			</td>
+			</td><?php } ?>
                 <td>
                     <a href="liste.php?id=<?php echo $donnees['id'];?>">Lien du cours</a>
                 </td>
