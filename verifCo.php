@@ -2,7 +2,6 @@
 require_once("Fonctions/fonction.php");
 $connexion = connexionMysqlBdd("localhost","double", "root", "");
 $mdpIDBdd = GetUserMDPID($_POST['name'],$connexion);
-
 echo $_POST['mdp'];
 $idcrypt = md5($mdpIDBdd[0]['id']);
 $mdpcrypt =  crypt($_POST['mdp'],$idcrypt);
@@ -20,7 +19,7 @@ if ($mdpcrypt == $mdpIDBdd[0]['Authentication'] ) {
 	header('Location: index.php');
 }
 else {
-	echo 'Mot de passe incorrect';
+	header('Location: connexion.php');
 }
 
 var_dump($perm);
