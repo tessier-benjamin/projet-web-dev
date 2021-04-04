@@ -1,5 +1,6 @@
 <?php
 require_once("Fonctions/fonction.php");
+require_once("header.php");
 $connexion = connexionMysqlBdd("localhost","double", "root", "");
 $données = GetCours($connexion,$_GET['id']);
 ?>
@@ -30,3 +31,5 @@ $données = GetCours($connexion,$_GET['id']);
 		<input type="submit" value="Envoyer le message" /> 
     </div>
 </form>
+</br>
+<a href="listeCours.php">retour</a>
