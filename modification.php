@@ -22,7 +22,7 @@ $données = GetCours($connexion,$_GET['id']);
         <img src="images/infobull.png" alt="infobulle" onmouseover="javascript: afficher_aide(document.getElementById('aide_salaire'));" onmouseout="javascript: afficher_aide(document.getElementById('aide_salaire'));"/>
         <div class="infobulle">
             <div class="infobulle-texte" id="aide_salaire" style="display: none;">
-                séparer chaque couple par un point virgule
+                séparer chaque couple par un point virgule et chaque chiffre du couple par un "+"
             </div>
         </div>
     </div> 

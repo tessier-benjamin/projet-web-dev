@@ -4,7 +4,7 @@ require_once("Fonctions/fonction.php");
 
 ?>
 
-<link href="cssAjoutCours.css" rel="stylesheet">
+<link href="cssAjoutCours.css" rel="stylesheet" >
 <script type="text/javascript" src="infobulle.js"></script>
 <form method="post" action="verif.php">
     <div>
@@ -21,7 +21,7 @@ require_once("Fonctions/fonction.php");
         <img src="images/infobull.png" alt="infobulle" onmouseover="javascript: afficher_aide(document.getElementById('aide_salaire'));" onmouseout="javascript: afficher_aide(document.getElementById('aide_salaire'));"/>
         <div class="infobulle">
             <div class="infobulle-texte" id="aide_salaire" style="display: none;">
-                séparer chaque couple par un point virgule
+                séparer chaque couple par un point virgule et chaque chiffre du couple par un "+"
             </div>
         </div>
     </div> 
