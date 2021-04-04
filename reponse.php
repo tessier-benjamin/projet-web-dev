@@ -49,7 +49,7 @@ $Questions = explode(";",$données['0']['couple']);
                   <?php $resultat = explode("+",$Questions[$i]);
                   echo $resultat[0]+$resultat[1]; ?>
               </td>
-    <\tr>
+    </tr>
     <?php
         }
     ?>
