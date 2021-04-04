@@ -26,9 +26,12 @@ function AfficherCours($connexion){
 					<th>niveau</th>
 					<th>couple</th>
                     <th>Lien du cour</th>
+					<?php
+					if ($_COOKIE['perm'] == 'Admin' or $_COOKIE['perm'] == 'Enseignant') {
+					?>
 					<th>Supprimer</th>
 					<th>Modifier</th>
-                    
+                    <?php } ?>
                 </tr>
 				<?php
 		while($donnees = $requete->fetch()){
@@ -56,12 +59,17 @@ function AfficherCours($connexion){
                 <td>
                     <a href="liste.php?id=<?php echo $donnees['id'];?>">Lien du cours</a>
                 </td>
+				
+				<?php
+					if ($_COOKIE['perm'] == 'Admin' or $_COOKIE['perm'] == 'Enseignant') {
+					?>	
 				<td>
                     <a href="delete.php?id=<?php echo $donnees['id'];?>">Supprimer cours</a>
                 </td>
 				<td>
                     <a href="modification.php?id=<?php echo $donnees['id'];?>">Modifier cours</a>
-                </td>
+                </td> <?php } ?>
+				
 	</tr><?php
 
 		}?></table><?php
@@ -103,5 +111,63 @@ function GetCours($connexion,$id){
 
 function update($id,$intitule,$niveau,$couple,$connexion){
 	$requete = $connexion->prepare("update cours set intitule = '$intitule' ,niveau='$niveau',couple='$couple' where id = '$id' ");
+	$requete->execute(array()) ;
+}
+function GetPermission($connexion){
+	$requete = $connexion->prepare("Select * from permission;");
+	$requete->execute(array()) ;
+	$resultat = $requete->fetchAll();
+	return $resultat;
+}
+function GetLastIdUser($connexion){
+	$requete = $connexion->prepare("Select Max(id) from users;");
+	$requete->execute(array()) ;
+	$resultat = $requete->fetchAll();
+	return $resultat;
+
+}
+function CreateUser($id,$name,$auth,$idPerm,$connexion){
+	$requete = $connexion->prepare("Insert into users (id,Name,Authentication,idPermission) Values ('$id','$name','$auth','$idPerm') ");
+	$requete->execute(array()) ;
+}
+function GetUserMDPID($name,$connexion){
+	$requete = $connexion->prepare("Select id,Name,Authentication from users where Name = '$name';");
+	$requete->execute(array()) ;
+	$resultat = $requete->fetchAll();
+	return $resultat;
+}
+function GetPerm($name,$connexion){
+	$requete = $connexion->prepare("select permission.id,Permission from users inner join permission on users.idPermission = permission.id where Name = '$name';");
+	$requete->execute(array()) ;
+	$resultat = $requete->fetchAll();
+	return $resultat;
+}
+function GetUsers($connexion){
+	$requete = $connexion->prepare("select * from users inner join permission on users.idPermission = permission.id;");
+	$requete->execute(array()) ;
+	$resultat = $requete->fetchAll();
+	return $resultat;
+}
+function deleteUser($connexion,$id){
+	$requete = $connexion->prepare("delete from users where id = '$id'");
+	$requete->execute(array()) ;
+}
+function GetUsersId($id,$connexion){
+	$requete = $connexion->prepare("select * from users inner join permission on users.idPermission = permission.id where users.id = '$id';");
+	$requete->execute(array()) ;
+	$resultat = $requete->fetchAll();
+	return $resultat;
+}
+
+function updateName($id,$name,$connexion){
+	$requete = $connexion->prepare("update users set Name = '$name' where id = '$id' ");
+	$requete->execute(array()) ;
+}
+function updateMDP($id,$mdp,$connexion){
+	$requete = $connexion->prepare("update users set Authentication = '$mdp' where id = '$id' ");
+	$requete->execute(array()) ;
+}
+function updatePerm($id,$perm,$connexion){
+	$requete = $connexion->prepare("update users set idPermission = '$perm' where id = '$id' ");
 	$requete->execute(array()) ;
 }

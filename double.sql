@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 24 mars 2021 à 09:37
+-- Généré le : Dim 04 avr. 2021 à 13:01
 -- Version du serveur :  5.7.31
--- Version de PHP : 7.2.33
+-- Version de PHP : 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,16 +34,61 @@ CREATE TABLE IF NOT EXISTS `cours` (
   `niveau` varchar(255) COLLATE utf8_bin NOT NULL,
   `couple` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `cours`
 --
 
 INSERT INTO `cours` (`id`, `intitule`, `niveau`, `couple`) VALUES
-(1, 'test', 'Facile', '9-9;12-13;15-12'),
-(11, 'test3', 'Facile', 'fssethdsf'),
-(10, 'test3', 'Facile', 'fssethdsf');
+(15, 'Test', 'Facile', '9+9;6+6;3+6');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `permission`
+--
+
+DROP TABLE IF EXISTS `permission`;
+CREATE TABLE IF NOT EXISTS `permission` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Permission` varchar(255) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `permission`
+--
+
+INSERT INTO `permission` (`id`, `Permission`) VALUES
+(1, 'Admin'),
+(2, 'Enseignant'),
+(3, 'Eleve');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(255) COLLATE utf8_bin NOT NULL,
+  `Authentication` text COLLATE utf8_bin NOT NULL,
+  `idPermission` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idPermission` (`idPermission`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `Name`, `Authentication`, `idPermission`) VALUES
+(2, 'Paul', 'Mot de passe', 2),
+(3, 'Kevin', 'ecFtZeBmGyZ2k', 1),
+(4, 'Marie', 'a8JWEt7RgK/F6', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
