@@ -35,6 +35,7 @@ function AfficherCours($connexion){
 					?>
 					<th>Supprimer</th>
 					<th>Modifier</th>
+					<th>Exporter</th>
                     <?php } ?>
                 </tr>
 				<?php
@@ -76,7 +77,11 @@ function AfficherCours($connexion){
                 </td>
 				<td>
                     <a href="modification.php?id=<?php echo $donnees['id'];?>">Modifier cours</a>
-                </td> <?php } ?>
+                </td>
+				<td>
+                    <a href="Export.php?couple=<?php echo $donnees['couple'];?>">Exporter</a>
+                </td>
+				<?php } ?>
 				
 	</tr><?php
 
