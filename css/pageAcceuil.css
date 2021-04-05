@@ -1,0 +1,30 @@
+﻿html
+{
+	background-color : #ADD8E6;
+}
+.button
+{
+	background-color : grey;
+	border: none;
+	color : #F5FFFA;
+	font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 6px 6px 20px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    outline: none;
+    display: block;
+    margin : auto;
+    position:relative;
+    margin-bottom: 40px ;
+    margin-top: 60px ;
+
+
+}
+
+#hello
+{
+    font-size: 25px;
+    text-align:center;
+}

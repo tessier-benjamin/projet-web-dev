@@ -1,3 +1,4 @@
+<html>
 <?php
 require_once("Fonctions/fonction.php");
 require_once("header.php");
@@ -5,7 +6,7 @@ $connexion = connexionMysqlBdd("localhost","double", "root", "");
 $données = GetCours($connexion,$_GET['id']);
 ?>
 
-<link href="cssAjoutCours.css" rel="stylesheet">
+<link href="css/cssAjoutCours.css" rel="stylesheet">
 <script type="text/javascript" src="infobulle.js"></script>
 <form method="post" action="update.php">
     <div>
@@ -33,3 +34,4 @@ $données = GetCours($connexion,$_GET['id']);
 </form>
 </br>
 <a href="listeCours.php">retour</a>
+</html>

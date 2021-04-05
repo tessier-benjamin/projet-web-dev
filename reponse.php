@@ -1,3 +1,4 @@
+<HTML>
 <?php
 require_once("Fonctions/fonction.php");
 require_once("header.php");
@@ -5,7 +6,7 @@ $connexion = connexionMysqlBdd("localhost","double", "root", "");
 $données = GetQuizz($connexion,$_POST['id']);
 $Questions = explode(";",$données['0']['couple']);
 ?>
-
+<link href="css/cssAjoutCours.css" rel="stylesheet">
 <table>
     <tr>
         <th>Couple</th>
@@ -61,3 +62,4 @@ $Questions = explode(";",$données['0']['couple']);
 </p>
 
 
+</html>

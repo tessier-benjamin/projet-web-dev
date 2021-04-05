@@ -5,7 +5,7 @@ $connexion = connexionMysqlBdd("localhost","double", "root", "");
 $données = GetQuizz($connexion,$_GET['id']);
 $Questions = explode(";",$données['0']['couple']);
 ?>
-
+<link href="css/liste.css" rel="stylesheet" >
 <form action="reponse.php" method="post">
     <table>
         <tr>
