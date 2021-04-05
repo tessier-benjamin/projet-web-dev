@@ -7,7 +7,7 @@ require_once("Fonctions/fonction.php");
 
 <link href="cssAjoutCours.css" rel="stylesheet" >
 <script type="text/javascript" src="infobulle.js"></script>
-<form method="post" action="verif.php">
+<form method="post" action="verif.php" enctype="multipart/form-data">
     <div>
         <label >intitule:</label>
         <input type="text" id="intitule" name="intitule">
@@ -26,20 +26,15 @@ require_once("Fonctions/fonction.php");
             </div>
         </div>
     </div> 
+
+    	<label for="avatar">Importer fichier texte</label>
+    <input type="file" name="file" value="file" accept=".txt" />
+
 	<div class="button">
 		<input type="submit" value="Envoyer le message" /> 
     </div>
-</form>
-
-
-
-<form method="post">
-	<label for="avatar">Importer fichier texte</label>
-    <input type="file" name="file" value="file" accept=".txt" />
 
 </form>
-
-
 <p id="heading"><a href="index.php">retour</a></p>
 
 </HTML>

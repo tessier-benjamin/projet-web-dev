@@ -9,9 +9,6 @@ AfficherCours($connexion);
 <?php
 					if ($_COOKIE['perm'] == 'Admin' or $_COOKIE['perm'] == 'Enseignant') {
 					?>	
-	<form action="<?php ExportAllCouple($connexion)?>" method="post">
-		<input type="submit" name="Export" value="Exporter tout les cours"/>
-	</form>
 	<?php } ?>
 	
 
