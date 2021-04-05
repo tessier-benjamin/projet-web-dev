@@ -1,3 +1,4 @@
+<html>
 <?php
 require_once("Fonctions/fonction.php");
 require_once("header.php");
@@ -5,7 +6,7 @@ $connexion = connexionMysqlBdd("localhost","double", "root", "");
 $données = GetUsersId($_GET['id'],$connexion);
 $permi = GetPermission($connexion);
 ?>
-
+<link href="css/cssAjoutCours.css" rel="stylesheet">
 <form method="post" action="UpdateName.php">
 
 <label >Nom :</label>
@@ -43,3 +44,4 @@ $permi = GetPermission($connexion);
 
 </br>
 <a href="index.php">retour</a>
+</html>

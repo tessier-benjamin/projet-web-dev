@@ -1,10 +1,11 @@
+<html>
 <?php
 require_once("Fonctions/fonction.php");
 require_once("header.php");
 $connexion = connexionMysqlBdd("localhost","double", "root", "");
 $users = GetUsers($connexion);
-
 ?>
+<link href="css/cssAjoutCours.css" rel="stylesheet">
 <table>
 	<tr>
 	<th>Nom</th>
@@ -45,4 +46,4 @@ $users = GetUsers($connexion);
 </table>
 </br>
 <a href="index.php">Accueil</a>
-	
+</html>

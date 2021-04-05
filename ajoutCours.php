@@ -5,7 +5,7 @@ require_once("Fonctions/fonction.php");
 
 ?>
 
-<link href="cssAjoutCours.css" rel="stylesheet" >
+<link href="css/cssAjoutCours.css" rel="stylesheet" >
 <script type="text/javascript" src="infobulle.js"></script>
 <form method="post" action="verif.php">
     <div>

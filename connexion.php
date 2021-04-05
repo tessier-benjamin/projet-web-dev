@@ -1,3 +1,5 @@
+<html>
+<link href="css/cssAjoutCours.css" rel="stylesheet">
 <form method="post" action="verifCo.php">
     <div>
         <label >Nom:</label>
@@ -9,3 +11,4 @@
     </div>
     <input type="submit" value = "Connexion"/>
 </form>
+</html>
