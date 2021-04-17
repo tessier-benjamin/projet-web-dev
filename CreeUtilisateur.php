@@ -6,16 +6,17 @@ $connexion = connexionMysqlBdd("localhost","double", "root", "");
 $permi = GetPermission($connexion);
 
 ?>
-<link href="css/cssAjoutCours.css" rel="stylesheet">
+<link href="css/CreeUtilisateur.css" rel="stylesheet">
 <form method="post" action="verifCreate.php">
-    <div>
+    <div class="nom">
         <label >Nom:</label>
         <input type="text" id="name" name="name">
     </div>
-    <div>
+    <div class="motdepasse">
         <label >Mot de passe:</label>
         <input type="password" id="mdp" name="mdp">
     </div>
+    <div class="permission">
     <label>Permission:</label>
     <select name = "perm">
         <?php
@@ -25,9 +26,10 @@ $permi = GetPermission($connexion);
         }
         ?>
     </select></br>
-    <input type="submit" value = "Cree"/>
+    </div>
+    <input class="button" type="submit" value = "Creer"/>
 </form>
 
 </br>
-<a href="index.php">retour</a>
+<a href="index.php"><img class="image" src="images/fleche.jpg" /></a>
 </html>

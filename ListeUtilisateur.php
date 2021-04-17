@@ -5,7 +5,7 @@ require_once("header.php");
 $connexion = connexionMysqlBdd("localhost","double", "root", "");
 $users = GetUsers($connexion);
 ?>
-<link href="css/cssAjoutCours.css" rel="stylesheet">
+<link href="css/cssListeUtilisateur.css" rel="stylesheet">
 <table>
 	<tr>
 	<th>Nom</th>
@@ -32,7 +32,7 @@ $users = GetUsers($connexion);
 	?>
 	</td>
 	<td>
-	<a href="EditUser.php?id=<?php echo $users[$i][0];?>">Modier utilisateur</a>
+	<a href="EditUser.php?id=<?php echo $users[$i][0];?>">Modifier utilisateur</a>
 	
 	</td>
 	
