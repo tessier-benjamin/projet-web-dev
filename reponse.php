@@ -20,6 +20,9 @@ $Questions = explode(";",$données['0']['couple']);
 
     for ($i = 0; $i < count($Questions); $i++)
     {
+    	if (isset($_POST[$i])) {
+    		# code...
+    	
         ?>
     <tr>
         <td>
@@ -52,6 +55,7 @@ $Questions = explode(";",$données['0']['couple']);
               </td>
     </tr>
     <?php
+}
         }
     ?>
 
