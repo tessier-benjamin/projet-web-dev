@@ -7,6 +7,7 @@ $Questions = explode(";",$données['0']['couple']);
 ?>
 <link href="css/liste.css" rel="stylesheet" >
 <form action="reponse.php" method="post">
+<div class="form">
     <table>
         <tr>
             <th>couple</th>
@@ -19,7 +20,9 @@ $Questions = explode(";",$données['0']['couple']);
     {
 
         ?>
+        
         <tr>
+        <div class="affichage">
             <td>
                 <?php echo $Questions[$i] ; ?>
             </td>
@@ -33,11 +36,14 @@ $Questions = explode(";",$données['0']['couple']);
                 <input type="texte" name="resultat<?php echo $i ?>" value="" />
             </td>
             <input type="hidden" name="id" value="<?php echo $_GET['id']?>" />
+            </div>
             <?php
     }
             ?>
         </tr>
     </table>
+    </div>
     <br />
-    <input type="submit" value = "Correction"/>
+    <input class="button" type="submit" value = "Correction"/>
 </form>
+

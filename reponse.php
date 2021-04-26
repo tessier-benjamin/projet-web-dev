@@ -6,7 +6,8 @@ $connexion = connexionMysqlBdd("localhost","double", "root", "");
 $données = GetQuizz($connexion,$_POST['id']);
 $Questions = explode(";",$données['0']['couple']);
 ?>
-<link href="css/cssAjoutCours.css" rel="stylesheet">
+<link href="css/reponse.css" rel="stylesheet">
+<div class="form">
 <table>
     <tr>
         <th>Couple</th>
@@ -56,9 +57,11 @@ $Questions = explode(";",$données['0']['couple']);
     ?>
 
 </table>
+</div>
 
 <p id="heading">
-    <a href="listeCours.php">retour</a>
+    <a href="listeCours.php"><img class="image" src="images/fleche.jpg" /></a>
+
 </p>
 
 

@@ -8,3 +8,15 @@
     border-radius: 5px;
 
 }
+.affichage {
+    display: block;
+    margin: auto;
+    font-size: 35px;
+    text-align: center;
+    margin-left: 40%;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+} 
