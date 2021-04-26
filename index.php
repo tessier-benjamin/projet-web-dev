@@ -6,13 +6,13 @@ require_once("header.php");
 echo 'Bonjour ' ; echo $_COOKIE['name'] ;
 ?>
 </div>
-<button class="button"><a href="listeCours.php">voir un cours</a></button>
+<a href="listeCours.php"><button class="button">voir un cours</button></a>
 <?php
     if ($_COOKIE['perm'] == 'Admin' or $_COOKIE['perm'] == 'Enseignant' ) {
     ?>
 
-        <button class="button"><a href="ajoutCours.php">Ajouter un cours</a></button>
-        <button class="button"><a href="CreeUtilisateur.php">Cree Utilisateur</a></button>
-        <button class="button"><a href="ListeUtilisateur.php">Liste Utilisateur</a></button><?php
+        <a href="ajoutCours.php"><button class="button">Ajouter un cours</button></a>
+        <a href="CreeUtilisateur.php"><button class="button">Cree Utilisateur</button></a>
+        <a href="ListeUtilisateur.php"><button class="button">Liste Utilisateur</button></a><?php
     }?>
 </html>

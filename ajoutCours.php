@@ -5,18 +5,18 @@ require_once("Fonctions/fonction.php");
 
 ?>
 
-<link href="css/cssAjoutCours.css" rel="stylesheet" >
+<link href="css/ajoutCours.css" rel="stylesheet" >
 <script type="text/javascript" src="infobulle.js"></script>
 <form method="post" action="verif.php" enctype="multipart/form-data">
-    <div>
+    <div class="intitule">
         <label >intitule:</label>
         <input type="text" id="intitule" name="intitule">
     </div>
-    <div>
+    <div class="niveau">
         <label >niveau:</label>
         <input type="text" id="niveau" name="niveau">
     </div>
-    <div>
+    <div class="liste">
         <label >liste des couples :</label>
         <textarea type="text" id="texte" name="texte"></textarea>
         <img src="images/infobull.png" alt="infobulle" onmouseover="javascript: afficher_aide(document.getElementById('aide_salaire'));" onmouseout="javascript: afficher_aide(document.getElementById('aide_salaire'));"/>
@@ -26,16 +26,16 @@ require_once("Fonctions/fonction.php");
             </div>
         </div>
     </div> 
-
+    <div class="import">
     	<label for="avatar">Importer fichier texte</label>
     <input type="file" name="file" value="file" accept=".txt" />
-
-	<div class="button">
-		<input type="submit" value="Envoyer le message" /> 
+    </div>
+	<div>
+		<input class="button" type="submit" value="Envoyer le message" /> 
     </div>
 
 </form>
-<p id="heading"><a href="index.php">retour</a></p>
+<a href="index.php"><img class="image" src="images/fleche.jpg" /></a>
 
 </HTML>
 
