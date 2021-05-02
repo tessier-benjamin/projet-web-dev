@@ -86,9 +86,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `Name`, `Authentication`, `idPermission`) VALUES
-(2, 'Paul', 'Mot de passe', 2),
 (3, 'Kevin', 'ecFtZeBmGyZ2k', 1),
-(4, 'Marie', 'a8JWEt7RgK/F6', 1);
+(4, 'Marie', 'a8JWEt7RgK/F6', 3);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
